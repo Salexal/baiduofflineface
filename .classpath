@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_91">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="D:/FaceOfflineSample"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/opencv32/opencv/build/java/opencv-320.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/opencv32/opencv/build/java/x64"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="nanohttpd-2.2.0.jar" sourcepath="C:/Users/xwm/AppData/Local/Temp/.org.sf.feeling.decompiler1570779697690/source/nanohttpd-2.2.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="lib/httpclient-4.3.1.jar"/>
+	<classpathentry kind="lib" path="lib/httpcore-4.4.3.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.6.jar"/>
+	<classpathentry kind="lib" path="lib/fastjson-1.2.49.jar" sourcepath="C:/Users/xwm/AppData/Local/Temp/.org.sf.feeling.decompiler1570779697690/source/fastjson-1.2.49-sources.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
