@@ -17,6 +17,8 @@ https://pan.baidu.com/s/1rYylU2EbGOothwLXlkg8LQ
 
 bat启动文件：
 java -classpath F:\FaceOfflineTest\bin;C:\opencv32\opencv\build\java\opencv-320.jar;F:\FaceOfflineTest\nanohttpd-2.2.0.jar;F:\FaceOfflineTest\lib\commons-codec-1.10.jar;F:\FaceOfflineTest\lib\commons-logging-1.0.4.jar;F:\FaceOfflineTest\lib\httpclient-4.3.1.jar;F:\FaceOfflineTest\lib\httpcore-4.4.3.jar;F:\FaceOfflineTest\lib\commons-io-2.6.jar;F:\FaceOfflineTest\lib\fastjson-1.2.49.jar -Djava.library.path=F:\FaceOfflineTest;C:\opencv32\opencv\build\java\x64 -Dfile.encoding=UTF-8 com.jni.face.HttpFileServer
+
+
 ————————————————
 版权声明：本文为CSDN博主「xwm1000」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
 原文链接：https://blog.csdn.net/xwm1000/article/details/102812790
