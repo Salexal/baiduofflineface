@@ -4,7 +4,11 @@ import org.opencv.core.Mat;
 import org.opencv.core.MatOfByte;
 import org.opencv.imgcodecs.Imgcodecs;
 
-// 对图片进行base64编码解码类
+/**
+ * 
+ * @ 对图片进行base64编码解码类
+ *
+ */
 public class ImageBase64 {
     static String  base64_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 

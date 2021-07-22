@@ -1,5 +1,5 @@
 1: 安装jdk，推荐jdk1.8(64位)(sdk仅适应于windows的64位平台)
-2: 安装eclipse，用eclipse打开工程。(eclipse->import->General->Projects from Folder or Archive)
+2: 安装eclipse，用eclipse打开工程。(eclipse->import->General->Projects from Folder or Archive)(可下载eclipse官网最新版本)
 3：安装opencv(若sdk自带的不能用,则需要安装opencv、sdk自带的opencv的jar及dll分别在opencv-jar和opencv-dll中，导入工程后，要导入jar和jar的native中选dll，不知如何加载的可参考下面链接文章加载)，
    在opencv官网下载opencv-3.2.0-vc14.exe,双击安装，定位到build目录夹的java，dll选用x64的库文件。
    opencv的jar加载请自行百度。（如参考文章：https://blog.csdn.net/m1109048058/article/details/76462341，https://blog.csdn.net/qq_36224522/article/details/81390110）
@@ -7,3 +7,6 @@
    这样可确保java能找到底层c++库文件BaiduFaceApi.dll。否则会提示加载库文件library错误。
 5: eclipse中右键工程，选properties，把resource中的Text file encoding调整为UTF-8(防止因为编码风格不是utf-8导致特征值入库保存不正确)
 6：编译运行工程。（运行前请通过授权激活，授权激活方法参考百度官网文档，激活文件放于FaceOfflineSample目录中即可)
+7: 若提示找不到依赖dll文件等错误，可通过depends22_x64.zip（FaceOfflineSample目录）解压，查看缺少啥依赖dll。
+另外的方法就是也可通过在测试电脑上安装vs2015 comunity版本，这样可确保解决依赖库不存在的问题。（该java sdk其实底层依赖都是c++的库）
+8：doc目录有sdk文档，请参考使用。

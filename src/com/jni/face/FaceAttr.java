@@ -1,66 +1,41 @@
 package com.jni.face;
 
-import org.opencv.core.Core;
 import org.opencv.core.Mat;
+
+import com.jni.struct.Attribute;
 import org.opencv.imgcodecs.Imgcodecs;
 
-// 获取人脸属性的类及demo
+/**
+ * 
+ * @ 获取人脸属性的类及demo
+ *
+ */
 public class FaceAttr {
 
-    public void testFaceAttr() {
-         testFaceAttrByPath();
-        // testFaceAttrByBuf();
-        // testFaceAttrByMat();
-        // testFaceAttrByFace();
-    }
-
-    public static void testFaceAttrByPath() {
-        // 通过传入人脸图片地址获取人脸属性
-        String strAttr = Face.faceAttr("d:/mv.jpg");
-        System.out.println("strAttr is:" + strAttr);
-    }
-
-    public void testFaceAttrByBuf() {
-        // 通过传入图片二进制buffer获取人脸属性
-        byte[] bufs = ImageBuf.getImageBuffer("d:/mv.jpg");
-        String strAttr = Face.faceAttrByBuf(bufs, bufs.length);
-        System.out.println("strAttrBuf is:" + strAttr);
-    }
-
-    public static void testFaceAttrByMat() {
-    	Face face = new Face();
-    	face.sdkInit(false);
-        // 通过传入opencv视频帧人脸属性
-        Mat mat = Imgcodecs.imread("d:/mv.jpg");
+    // 人脸姿态角示例
+    public int imageFaceAttribute() {
+        Mat mat = Imgcodecs.imread("images/2.jpg");
         long matAddr = mat.getNativeObjAddr();
-        String strAttrMat = face.faceAttrByMat(matAddr);
-        System.out.println("strAttrMat is:" + strAttrMat);
-    }
-
-    public static void testFaceAttrByFace() {
-    	Face face = new Face();
-    	face.sdkInit(false);
-        // 传入opencv视频帧及检测到的人脸信息，适应于多人脸
-        int objNum = 10;
-        Mat mat = Imgcodecs.imread("d:/_DSC6549.JPG");
-        long matAddr = mat.getNativeObjAddr();
-        TrackFaceInfo[] out = Face.trackByMat(matAddr, objNum);
-        if (out != null && out.length > 0) {
-            for (int index = 0; index < out.length; index++) {
-                TrackFaceInfo info = out[index];
-                String strAttr = Face.faceAttrByFace(matAddr, info);
-                System.out.println("faceAttrByFace is:" + strAttr);
-            }
+        Attribute[] attrList = Face.faceAttr(matAddr);
+        if (attrList == null || attrList.length <= 0) {
+            System.out.println("detect no face");
+            return -1;
         }
+        // 输出可参考Attribute的定义说明或doc目录的文档说明
+        for (int i = 0; i < attrList.length; i++) {
+            // 第几个人脸
+            System.out.println("face index is:" + i);
+            // 年龄
+            System.out.println("age is:" + attrList[i].age);
+            // 表情
+            System.out.println("emotion is:" + attrList[i].emotion);
+            // 性别
+            System.out.println("gender is:" + attrList[i].gender);
+            // 种族
+            System.out.println("race is:" + attrList[i].race);
+            // 是否佩戴眼镜
+            System.out.println("glasses is:" + attrList[i].glasses);
+        }        
+        return 0;
     }
-    
-    public static void main(String[] args) {
-//    	OpenCV.loadLocally();
-    	System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-    	TrackFaceInfo info = Face.trackMax("d:\\mv.jpg");
-    	System.out.println(new Face().isAuth());
-    	System.out.println(info);
-    	testFaceAttrByFace();
-	}
-
 }
